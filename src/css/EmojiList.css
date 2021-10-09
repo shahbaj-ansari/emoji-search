@@ -1,0 +1,28 @@
+.emoji-row {
+    border-top: 1px solid #ccc;
+    height: 3rem;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    position: relative;
+}
+
+.emoji-row .symbol {
+    font-size: 1.7rem;
+}
+
+.emoji-row:hover {
+    background-color:#eee;
+    cursor: pointer;
+}
+
+.copy-emoji { 
+    position: absolute;
+    right: 8px;  
+    color: #ccc;
+}
+
+.hide {
+   display:none;
+}
