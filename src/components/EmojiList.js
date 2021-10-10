@@ -5,14 +5,17 @@ import { v4 as uuidv4 } from 'uuid';
 class EmojiList extends React.Component {
 
     state = {
-        isHover:false
+        Copystyle: "hide"
     }
 
     onHover = () =>{
-      //   console.log('hover over emoji row');
-        this.setState({isHover : !this.state.isHover})   
+        this.setState({Copystyle : "copy-emoji"})      
     }
 
+    onHoverOff = () =>{
+          this.setState({Copystyle : "hide"})      
+    }
+  
     // onClicking in an emoji copy it
     emojiClicked= ()=> {
         navigator.clipboard.writeText(this.props.emoji.symbol);
@@ -20,10 +23,10 @@ class EmojiList extends React.Component {
 
     render () {
         return (
-            <div key={uuidv4()} className="emoji-row" onMouseEnter={this.onHover} onMouseLeave={this.onHover} onClick={this.emojiClicked}>
+            <div key={uuidv4()} className="emoji-row" onClick={this.emojiClicked} onMouseEnter={this.onHover} onMouseLeave={this.onHoverOff}>
                 <span className="symbol">{this.props.emoji.symbol}</span>
                 <span>{this.props.emoji.title}</span>
-                <span className={this.isHover?"copy-emoji":"hide"} >Click to copy emoji</span>
+                <span className={this.state.Copystyle}>Click to copy emoji</span>
             </div>
         )
     }
