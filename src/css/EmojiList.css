@@ -21,8 +21,9 @@
     position: absolute;
     right: 8px;  
     color: #ccc;
+    display: none;
 }
 
-.hide {
-   display:none;
+.emoji-row:hover .copy-emoji {
+   display:inline-block;
 }
