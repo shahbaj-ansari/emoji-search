@@ -14,7 +14,7 @@ class EmojiList extends React.Component {
     }
 
     // onClicking in an emoji copy it
-    onClick= ()=> {
+    emojiClicked= ()=> {
         navigator.clipboard.writeText(this.props.emoji.symbol);
     }
 
